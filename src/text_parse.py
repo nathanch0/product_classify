@@ -32,7 +32,8 @@ def place_vec_text_in_folder(df):
                         np.save(p, vec_text)
 
 if __name__ == '__main__':
-    train_indices, val_indices = get_existing_indices(training_df)
+    df = pd.read_excel('../data/training_data.xlsx')
+    train_indices, val_indices = get_existing_indices(df)
 
     titles = np.array(training_df['Title'].values)
     train_titles, val_titles = titles[train_indices], titles[val_indices]
